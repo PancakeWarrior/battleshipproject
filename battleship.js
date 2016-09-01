@@ -62,9 +62,9 @@ var gameBoard = [
 				]
 
 function fireTorpedo() {
-
-$(#"fireBox").text($("gameboard").val());
-
+	var userInput = $("#fireBox").val();
+	console.log("gone");
+	$("fireBox").val() = null;
 }
 
 /*
