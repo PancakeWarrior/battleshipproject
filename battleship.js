@@ -63,6 +63,14 @@ var gameBoard = [
 
 function fireTorpedo() {
 
-	// Your game logic will go here!
+$(#"fireBox").text($("gameboard").val());
 
 }
+
+/*
+letterConversion = {
+	"A" : 1
+	"B" : 2
+	"C" : 3
+}
+*/
