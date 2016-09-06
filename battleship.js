@@ -63,7 +63,8 @@ var gameBoard = [
 
 function fireTorpedo() {
 	var userInput = $("#myInputBox").val();
-	
-	var rowLetter = userInput.substring(0, 1);
-	var column = userInput.substring(1, 2);
+
+	var rowLetter = userInput.substring(0,1);
+	var column = userInput.substring(1,2);
+	var row = userInput.substring(0,1);
 }
