@@ -61,10 +61,35 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
-function fireTorpedo() {
-	var userInput = $("#myInputBox").val();
+				var shipsHit = 0;
 
-	var rowLetter = userInput.substring(0,1);
-	var column = userInput.substring(1,2);
-	var row = userInput.substring(0,1);
+function fireTorpedo() {
+	var gameOver = false;
+
+	var userInput = $("input").val();
+	var rowInput = userInput.substring(0,1).toUpperCase();
+	var columnInput = userInput.substring(1,3)
+
+	var rowNumber = letterConversion[rowInput];
+	var columnNumber = columnInput - 1;
+	var coordinates = "s" + rowNumber + columnNumber;
+	var battleship = gameBoard[rowNumber][columnNumber];
+	if (battleship == 1){
+		$("#" + coordinates).css("background-color", "brown");
+		shipsHit += 1;
+	}
+	else {
+		$("#" + coordinates).css("background-color", "tan");
+	}
+
+	console.log(coordinates);
+
+	if (shipsHit == 1) {
+		gameOver = true;
+	}
+
+	if (gameOver) {
+		$("#instructions").text("Game Over");
+		$("#inputBox").fadeOut();
+	}
 }
